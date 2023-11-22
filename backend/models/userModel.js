@@ -2,14 +2,12 @@ const mongoose = require("mongoose");
 
 // Schema
 const userSchema = new mongoose.Schema({
-    FirstName: String,
-    LastName: String,
-    DateOfBirth:String,
+    Name: String,
     Gender: String,
     Email: String,
-    Password:  String,
+    Password: String,
     Contact: String,
-    Active: String,
+    Active: Boolean,
     Role: {
         type: String,
         enum: ["Passenger", "Airline"]
