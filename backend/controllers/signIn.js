@@ -9,7 +9,7 @@ async function getUser(req, res) {
     console.log("Request Received");
 
     try {
-        const user = await User.findOne({ Email: email, PIN: password });
+        const user = await User.findOne({ Email: email, PIN: password , Active:true});
         if (user) {
             console.log("User found");
             res.status(200).send(user);
