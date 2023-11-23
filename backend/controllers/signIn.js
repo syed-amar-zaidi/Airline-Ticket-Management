@@ -18,7 +18,7 @@ async function getUser(req, res) {
             res.status(404).send({ error: "User not found" });
         }
     } catch (err) {
-        console.error("Error fetching user:", err);
+        console.error("Error fetching user: ", err);
         res.status(500).send({ error: "Error fetching user" });
     }
 }
