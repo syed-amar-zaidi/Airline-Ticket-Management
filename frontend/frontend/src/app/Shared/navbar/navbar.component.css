@@ -1,0 +1,15 @@
+/* Custom styling */
+.navbar-brand {
+    margin-right: auto; /* Push brand to the left */
+  }
+  
+  .styled-link {
+    text-decoration: none; /* Remove default underline */
+    color: #fff; /* Text color for links */
+    padding: 0.5rem 1rem; /* Adjust padding */
+  }
+  
+  .styled-link:hover {
+    color: #ff6600; /* Change text color on hover */
+  }
+  

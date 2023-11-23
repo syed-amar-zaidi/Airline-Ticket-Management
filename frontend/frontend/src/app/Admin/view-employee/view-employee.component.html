@@ -1,0 +1,135 @@
+<div class="container-fluid">
+  <div class="AddPharmacy">
+    <p id="label_size"><b>Admin / </b>Edit Employee</p>
+    <div class="table-responsive table-block">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+        
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Gender</th>
+            <th scope="col">ContactNumber</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of employeeData">
+            <td>{{ row.Name }}</td>
+            <td>{{ row.Email }}</td>
+            <td>{{ row.Password }}</td>
+            <td>{{ row.Gender }}</td>
+            <td>{{ row.Contact }}</td>
+            <td>
+              <input
+                type="button"
+                (click)="
+                  setEmployeeData(
+                    row._id,
+                    row.Name,
+                    row.Password,
+                    row.Gender,
+                    row.Email,
+                    row.Contact
+                  )
+                "
+                data-toggle="modal"
+                data-target="#updateModal"
+                value="Update"
+                class="btn btn-outline-primary"
+              />
+              <input
+                type="button"
+                (click)="deleteEmployeeData(row._id)"
+                value="Delete"
+                class="btn btn-outline-danger"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Edit Employee</h4>
+      </div>
+      <form (ngSubmit)="updateEmployeeDetails()" #employeeForm="ngForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="focus-label">Name</label>
+            <input
+              [(ngModel)]="Name"
+              name="Name"
+              type="text"
+              class="form-control"
+              id="InputName"
+              placeholder="Enter Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Gender</label>
+            <select
+              [(ngModel)]="Gender"
+              name="Gender"
+              class="form-select"
+              id="status-id"
+              required
+            >
+              <option *ngFor="let gender of genders" [value]="gender">
+                {{ gender }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Email</label>
+            <input
+              [(ngModel)]="Email"
+              name="Email"
+              type="email"
+              class="form-control"
+              id="Inputemail"
+              placeholder="Enter Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Password</label>
+            <input
+              [(ngModel)]="Password"
+              name="Password"
+              type="password"
+              class="form-control"
+              id="InputPassword"
+              placeholder="Enter Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Contact</label>
+            <input
+              [(ngModel)]="ContactNumber"
+              name="Contact"
+              type="tel"
+              class="form-control"
+              id="InputContact"
+              placeholder="Enter Contact"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">
+            Save changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

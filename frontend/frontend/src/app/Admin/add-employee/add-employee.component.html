@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="signUpBlock">
+        <p id="label_size"><b>Admin / </b>Add Employee</p>
+        <form action="" ngNativeValidate (ngSubmit)="handleSubmit()">
+            <div class="m-4">
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">Name</h6>
+                      
+                        <input [(ngModel)]="userName" [ngModelOptions]="{standalone:true}" type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="heading">Email</h6>
+                        <input [(ngModel)]="email" [ngModelOptions]="{standalone:true}" type="email" class="form-control" id="exampleInputemail" aria-describedby="emailHelp" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">Password</h6>
+                        <input [(ngModel)]="password" [ngModelOptions]="{standalone:true}" type="password" class="form-control" id="exampleInputpassword" aria-describedby="passwordHelp" placeholder="Enter Password" required>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="heading">Contact No.</h6>
+                        <input [(ngModel)]="phone" [ngModelOptions]="{standalone:true}" type="tel" class="form-control" id="exampleInputconact" aria-describedby="contactHelp" placeholder="Enter Contact" required>
+                    </div>
+                </div>
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">Gender</h6>
+                        <select class="form-control" id="exampleInputGender" aria-describedby="genderHelp" required
+                        [(ngModel)]="selectedGender" name="selectedGender">
+                        <option *ngFor="let gender of genders" [ngValue]="gender">{{ gender }}</option>
+                      </select>                                       
+                                                
+                    </div>
+                </div>
+                <div class="row myRow" >
+                    <div class="col-md-12 buttonBlock">
+                        <button  class="btn btn-outline-dark mt-4 mb-4">Added</button>
+                    </div>                
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

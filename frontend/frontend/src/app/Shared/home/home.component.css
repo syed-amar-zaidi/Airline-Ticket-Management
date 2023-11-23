@@ -1,0 +1,91 @@
+/* Navbar styles */
+.navbar {
+    background-color: #acaaaa;
+  }
+  
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #000; /* Change the text color to black */
+  }
+  
+  .img-container {
+    position: relative;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 25px;
+  }
+  
+  .img-container img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+  }
+  
+  .image-text {
+    position: absolute;
+    top: 30px;
+    left: 95px;
+    text-align: left;
+    font-size: 70px;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 20px auto; /* Add margin to the container */
+    padding: 20px;
+  }
+  
+  /* Style the heading */
+  h3 {
+    text-align: left;
+    color: #333;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, height 0.3s; /* Include height in the transition for smooth animation */
+    margin-bottom: 20px; /* Add margin between cards */
+    height: fit-content; /* Set initial height to fit content */
+  }
+
+  .expanded-card .card {
+    height: auto; /* Set the height to auto when expanded */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Style the card images */
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensure the image covers the entire container */
+  }
+  
+  /* Style the card body */
+  .card-body {
+    padding: 15px;
+  }
+  
+  /* Style the card title */
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the card text */
+  .card-text {
+    color: #555;
+  }
+  
+  /* Responsive layout for columns */
+  @media (max-width: 767px) {
+    .col {
+      margin-bottom: 20px;
+    }
+  }
+  
