@@ -19,7 +19,7 @@ router.get("/users/getPassenger", users.getPassengerUser);
 // Update user
 router.put("/users/:id", users.updateUser);
 // Delete user
-router.delete("/users/:id", users.deleteUser);
+router.delete("/users/:id", users.deactivateUser);
 // Get User Profile
 router.get("/users/profile/:id", profile.getUserProfile);
 // Update User Profile
@@ -27,11 +27,13 @@ router.put("/users/profile/:id", profile.updateUserProfile);
 // Delete User Account
 router.delete("/users/profile/:id", profile.deleteUserProfile);
 // Create Flight 
-router.post("/flight", flightControllers.createFlight);
+router.post("/flight", flightControllers.addFlight);
+// Get flight
+router.get("/flight/getFlight", flightControllers.getFlight);
 // Update Flight
 router.put("/flight/:id", flightControllers.updateFlight);
-// Search Flight
-router.get("/searchFlight", flightControllers.searchFlights);
+// Delete Flight
+router.delete("/flight/:id", flightControllers.deactivateFlight);
 // Create Booking
 router.post("/booking", bookingControllers.createBooking);
 // View Booking
