@@ -8,10 +8,10 @@ const flightSchema = new mongoose.Schema({
     Destination: String,
     DepartureDate: Date,
     ArrivalDate: Date,
+    Active: Boolean, 
     Class: {
         type: String,
-        enum: ['Economy', 'Business', 'First Class'],
-        default: 'Economy'
+        enum: ['Economy', 'Business', 'First Class']
     },
     AvailableSeats: Number,
     Price: Number,
