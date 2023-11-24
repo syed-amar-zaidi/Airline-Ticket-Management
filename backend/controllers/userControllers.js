@@ -59,24 +59,45 @@ async function updateUser(req, res) {
   }
 }
 
-// Delete User Profile to Deactivate (set Active to false)
-async function deleteUser(req, res) {
+// // Delete User Profile to Deactivate (set Active to false)
+// async function deleteUser(req, res) {
+//   try {
+//     const id = req.params.id;
+//     const deleteUser = await User.findByIdAndUpdate(
+//       id,
+//       { Active: false },
+//       { new: true }
+//     );
+//     res.sendStatus(deleteUser);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// }
+
+// Deactivate User Profile (set Active to false)
+async function deactivateUser(req, res) {
   try {
     const id = req.params.id;
-    const deleteUser = await User.findByIdAndUpdate(
+    const updatedUser = await User.findByIdAndUpdate(
       id,
       { Active: false },
-      { new: true }
+      { new: true } // To get the updated user data
     );
-    res.sendStatus(deleteUser);
+
+    if (!updatedUser) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(updatedUser); // Send the updated user data in the response
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 }
 
+
 module.exports = {
   getAirlineUser,
   getPassengerUser,
   updateUser,
-  deleteUser,
+  deactivateUser,
 };
