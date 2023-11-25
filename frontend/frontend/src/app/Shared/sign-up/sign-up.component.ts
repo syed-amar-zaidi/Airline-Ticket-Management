@@ -7,6 +7,7 @@ import { SignUpService } from 'src/app/Service/sign-up/sign-up.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+  emailExists = false;
   constructor(private signupService:SignUpService)
   {}
   userName = ""
