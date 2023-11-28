@@ -3,14 +3,13 @@ const mongoose = require('mongoose');
 const bookingSchema = new mongoose.Schema({
     passengerName: String,
       flightNumber: String,
-      seatNumber: String,
+      AvailableSeats: Number,
       bookingDate: Date,
       departureDate: Date,
       Active: Boolean,
       status: {
         type: String,
-        enum: ['Confirmed', 'Pending', 'Cancelled'],
-        default: 'Pending'
+        enum: ['Confirmed', 'Pending', 'Cancelled']
       },
 }, { timestamps: true });
 

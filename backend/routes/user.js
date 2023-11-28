@@ -6,34 +6,46 @@ const profile = require("../controllers/userprofile");
 const flightControllers = require("../controllers/flightController");
 const bookingControllers = require("../controllers/bookingController");
 const users = require("../controllers/userControllers")
-//const ticketControllers = require("../controllers/ticketController");
+const baggingControllers = require("../controllers/baggingController");
 
 // Create new users
-router.post("/users/signup", signup.createUser);
+router.post("/signup", signup.createUser);
 // Get a user by email and password
-router.get("/users/signin/:email/:password", signin.getUser);
+router.get("/signin/:email/:password", signin.getUser);
 // Get user of role Airline
-router.get("/users/getEmployee", users.getAirlineUser);
+router.get("/getEmployee", users.getAirlineUser);
 // Get user of role Passenger
-router.get("/users/getPassenger", users.getPassengerUser);
+router.get("/getPassenger", users.getPassengerUser);
 // Update user
 router.put("/users/:id", users.updateUser);
 // Delete user
 router.delete("/users/:id", users.deactivateUser);
 // Get User Profile
-router.get("/users/profile/:id", profile.getUserProfile);
+router.get("/get-profile/:id", profile.getUserProfile);
 // Update User Profile
-router.put("/users/profile/:id", profile.updateUserProfile);
-// Delete User Account
-router.delete("/users/profile/:id", profile.deleteUserProfile);
+router.put("/update-profile/:id", profile.updateUserProfile);
+// // Delete User Account
+// router.delete("/delete-profile/:id", profile.deleteUserProfile);
 // Create Flight 
 router.post("/flight", flightControllers.addFlight);
 // Get flight
-router.get("/flight/getFlight", flightControllers.getFlight);
+router.get("/getFlight", flightControllers.getFlight);
 // Update Flight
 router.put("/flight/:id", flightControllers.updateFlight);
 // Delete Flight
 router.delete("/flight/:id", flightControllers.deactivateFlight);
+// Search Flight
+router.get("/search-flight", flightControllers.searchFlight);
+// Book Flight
+router.post("/book-flight", flightControllers.bookFlight);
+// Create Bagging 
+router.post("/bagging", baggingControllers.addBagging);
+// Get Bagging
+router.get("/getBagging", baggingControllers.getBagging);
+// Update Bagging
+router.put("/bagging/:id", baggingControllers.updateBagging);
+// Delete Bagging
+router.delete("/bagging/:id", baggingControllers.deactivateBagging);
 // Create Booking
 router.post("/booking", bookingControllers.createBooking);
 // View Booking

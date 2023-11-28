@@ -9,7 +9,7 @@ const flightSchema = new mongoose.Schema({
     DepartureDate: Date,
     ArrivalDate: Date,
     Active: Boolean, 
-    Class: {
+    FlightClass: {
         type: String,
         enum: ['Economy', 'Business', 'First Class']
     },
