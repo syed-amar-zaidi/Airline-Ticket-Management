@@ -1,0 +1,138 @@
+<div class="search-container">
+  <div class="navbar">
+      <!-- Navigation bar with search inputs -->
+      <input type="text" placeholder="Destination" [(ngModel)]="destination">
+      <input type="date" placeholder="Departure Date" [(ngModel)]="departureDate">
+      <select [(ngModel)]="flightClass">
+          <option value="Economy">Economy</option>
+          <option value="Business">Business</option>
+          <option value="First Class">First Class</option>
+      </select>
+      <button (click)="searchFlights()">Search</button>
+  </div>
+
+  <!-- Display search results -->
+  <div class="search-results" *ngIf="flights.length > 0">
+    <h2>Search Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Airline</th>
+          <th scope="col">Flight Number</th>
+          <th scope="col">Departure Airport</th>
+          <th scope="col">Arrival Airport</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Departure Date</th>
+          <th scope="col">Arrival Date</th>
+          <th scope="col">Flight Class</th>
+          <th scope="col">Available Seats</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td>{{ flight.Airline }}</td>
+          <td>{{ flight.FlightNumber }}</td>
+          <td>{{ flight.DepartureAirport }}</td>
+          <td>{{ flight.ArrivalAirport }}</td>
+          <td>{{ flight.Destination }}</td>
+          <td>{{ flight.DepartureDate }}</td>
+          <td>{{ flight.ArrivalDate }}</td>
+          <td>{{ flight.FlightClass }}</td>
+          <td>{{ flight.AvailableSeats }}</td>
+          <td>{{ flight.Price }}</td>
+          <td>
+            <button data-toggle="modal" data-target="#updateModal" (click)="bookFlight(flight)">Book</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
+
+<!-- <div
+  class="modal fade"
+  id="updateModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Flight Booking</h4>
+      </div>
+      <form (ngSubmit)="updateEmployeeDetails()" #employeeForm="ngForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="focus-label">passengerName</label>
+            <input
+              [(ngModel)]="Name"
+              name="Name"
+              type="text"
+              class="form-control"
+              id="InputName"
+              placeholder="Enter Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">status</label>
+            <select
+              [(ngModel)]="Status"
+              name="Status"
+              class="form-select"
+              id="status-id"
+              required
+            >
+              <option *ngFor="let Stat of Status" [value]="Stat">
+                {{ stat }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Email</label>
+            <input
+              [(ngModel)]="Email"
+              name="Email"
+              type="email"
+              class="form-control"
+              id="Inputemail"
+              placeholder="Enter Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Password</label>
+            <input
+              [(ngModel)]="Password"
+              name="Password"
+              type="password"
+              class="form-control"
+              id="InputPassword"
+              placeholder="Enter Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Contact</label>
+            <input
+              [(ngModel)]="ContactNumber"
+              name="Contact"
+              type="tel"
+              class="form-control"
+              id="InputContact"
+              placeholder="Enter Contact"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->

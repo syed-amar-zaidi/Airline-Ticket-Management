@@ -1,0 +1,76 @@
+/* search.component.css */
+
+/* Custom styling for the search component */
+
+.search-container {
+    padding: 0;
+    margin: 0; /* Reset margin to zero */
+  }
+  
+  .navbar {
+    border-color: #333;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 100px;
+    margin-top: 20px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 14px;
+    width: calc(25% - 15px); /* Distribute input/select fields evenly */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    width: 100px; /* Set a specific width for the button */
+  }
+  
+  button:hover {
+    background-color: #ffad33;
+  }
+
+  /* flight-search.component.css */
+
+/* Styles for search results */
+.search-results {
+  margin-top: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 400px; /* Set a specific height for the table container */
+  width: 90%; /* Set the initial width for displaying */
+}
+
+/* Styles for the table */
+.search-results table {
+  width: 100%; /* Occupy full width */
+  border-collapse: collapse;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Styles for table headers */
+.search-results th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Styles for table data cells */
+.search-results td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+  

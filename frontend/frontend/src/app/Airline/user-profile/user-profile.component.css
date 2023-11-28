@@ -1,0 +1,22 @@
+/* CSS for the icon buttons and their hover effects */
+.icon-btn {
+    border: none; /* Remove button border */
+    padding: 0; /* Remove button padding */
+    background: none; /* Remove background color */
+  }
+  
+  /* Update icon button */
+  .icon-btn.update-btn:hover .fa-pencil {
+    color: #007bff; /* Blue color on hover for the update icon */
+  }
+  
+  /* Delete icon button */
+  .icon-btn.delete-btn:hover .fa-trash {
+    color: #dc3545; /* Red color on hover for the delete icon */
+  }
+  
+  /* Remove focus outline */
+  .icon-btn:focus {
+    outline: none;
+  }
+  

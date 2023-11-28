@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="signUpBlock">
+        <p id="label_size"><b>Airline / </b>Add Flight</p>
+        <form action="" ngNativeValidate (ngSubmit)="handleSubmit()">
+            <div class="m-4">
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">Airline</h6>                      
+                        <input [(ngModel)]="airline" [ngModelOptions]="{standalone:true}" type="text" class="form-control" id="exampleInputAirline" aria-describedby="airlineHelp" placeholder="Enter Airline" required>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="heading">FlightNumber</h6>
+                        <input [(ngModel)]="flightNumber" [ngModelOptions]="{standalone:true}" type="text" class="form-control" id="exampleInputflightNumber" aria-describedby="flightNumberHelp" placeholder="Enter FlightNumber" required>
+                    </div>
+                </div>
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">DepartureAirport</h6>
+                        <input [(ngModel)]="departureAirport" [ngModelOptions]="{standalone:true}" type="text" class="form-control" id="exampleInputdepartureAirport" aria-describedby="departureAirportHelp" placeholder="Enter departureAirport" required>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="heading">ArrivalAirport</h6>
+                        <input [(ngModel)]="arrivalAirport" [ngModelOptions]="{standalone:true}" type="text" class="form-control" id="exampleInputarrivalAirport" aria-describedby="arrivalAirportHelp" placeholder="Enter ArrivalAirport" required>
+                    </div>
+                </div>
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">Destination</h6>
+                        <input [(ngModel)]="destination" [ngModelOptions]="{standalone:true}" type="text" class="form-control" id="exampleInputdestination" aria-describedby="destinationHelp" placeholder="Enter Destination" required>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="heading">DepartureDate</h6>
+                        <input [(ngModel)]="departureDate" [ngModelOptions]="{standalone:true}" type="date" class="form-control" id="exampleInputdepartureDate" aria-describedby="departureDateHelp" placeholder="Enter DepartureDate" required>
+                    </div>
+                </div>
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">ArrivalDate</h6>
+                        <input [(ngModel)]="arrivalDate" [ngModelOptions]="{standalone:true}" type="date" class="form-control" id="exampleInputarrivalDate" aria-describedby="arrivalDateHelp" placeholder="Enter ArrivalDate" required>
+                    </div>                                       
+                    <div class="col-md-6">
+                        <h6 class="heading">AvailableSeats</h6>
+                      
+                        <input [(ngModel)]="availableSeats" [ngModelOptions]="{standalone:true}" type="text" class="form-control" id="exampleInputavailableSeats" aria-describedby="availableSeatsHelp" placeholder="Enter AvailableSeats" required>
+                    </div>
+                </div>
+                <div class="row myRow" >
+                    <div class="col-md-6">
+                        <h6 class="heading">Price</h6>
+                        <input [(ngModel)]="price" [ngModelOptions]="{standalone:true}" type="price" class="form-control" id="exampleInputprice" aria-describedby="priceHelp" placeholder="Enter Price" required>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="heading">FlightClass</h6>
+                        <select class="form-control" id="exampleInputFlightClass" aria-describedby="flightclassHelp" required
+                            [(ngModel)]="selectedFlightClass" name="selectedFlightClass">
+                            <option *ngFor="let cls of flightclass" [ngValue]="cls">{{ cls }}</option>
+                        </select>
+                    </div> 
+                </div>          
+                <div class="row myRow" >
+                    <div class="col-md-12 buttonBlock">
+                        <button  class="btn btn-outline-dark mt-4 mb-4">Added</button>
+                    </div>                
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

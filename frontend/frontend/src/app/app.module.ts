@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './Shared/sign-in/sign-in.component';
@@ -16,10 +16,14 @@ import { AdminSidebarPanelComponent } from './Admin/admin-sidebar-panel/admin-si
 import { AddEmployeeComponent } from './Admin/add-employee/add-employee.component';
 import { ViewEmployeeComponent } from './Admin/view-employee/view-employee.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
-import { AirlineDashboardComponent } from './Airline/airline-dashboard/airline-dashboard.component';
 import { AirlineSidebarComponent } from './Airline/airline-sidebar/airline-sidebar.component';
 import { AirlineSidebarPanelComponent } from './Airline/airline-sidebar-panel/airline-sidebar-panel.component';
-
+import { AddFlightComponent } from './Airline/add-flight/add-flight.component';
+import { ViewFlightComponent } from './Airline/view-flight/view-flight.component';
+import { PassengerSidebarComponent } from './Passenger/passenger-sidebar/passenger-sidebar.component';
+import { PassengerSidebarPanelComponent } from './Passenger/passenger-sidebar-panel/passenger-sidebar-panel.component';
+import { FlightSearchComponent } from './Passenger/flight-search/flight-search.component';
+import { UserProfileComponent } from './Airline/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -36,15 +40,21 @@ import { AirlineSidebarPanelComponent } from './Airline/airline-sidebar-panel/ai
     AddEmployeeComponent,
     ViewEmployeeComponent,
     AdminDashboardComponent,
-    AirlineDashboardComponent,
     AirlineSidebarComponent,
     AirlineSidebarPanelComponent,
+    AddFlightComponent,
+    ViewFlightComponent,
+    PassengerSidebarComponent,
+    PassengerSidebarPanelComponent,
+    FlightSearchComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

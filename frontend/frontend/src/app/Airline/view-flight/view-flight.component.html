@@ -1,0 +1,220 @@
+<div class="container-fluid">
+  <div class="AddFlight">
+    <p id="label_size"><b>Airline / </b>Edit Flight</p>
+    <div class="table-responsive table-block">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Airline</th>
+            <th scope="col">FlightNumber</th>
+            <th scope="col">DepartureAirport</th>
+            <th scope="col">ArrivalAirport</th>
+            <th scope="col">Destination</th>
+            <th scope="col">DepartureDate</th>
+            <th scope="col">ArrivalDate</th>
+            <th scope="col">FlightClass</th>
+            <th scope="col">AvailableSeats</th>
+            <th scope="col">Price</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of flightData">
+            <td>{{ row.Airline }}</td>
+            <td>{{ row.FlightNumber }}</td>
+            <td>{{ row.DepartureAirport }}</td>
+            <td>{{ row.ArrivalAirport }}</td>
+            <td>{{ row.Destination }}</td>
+            <td>{{ row.DepartureDate }}</td>
+            <td>{{ row.ArrivalDate }}</td>
+            <td>{{ row.FlightClass }}</td>
+            <td>{{ row.AvailableSeats }}</td>
+            <td>{{ row.Price }}</td>
+            <td>
+              <!-- Update button with icon -->
+              <button
+                type="button"
+                (click)="
+                  setFlightData(
+                    row._id,
+                    row.Airline,
+                    row.FlightNumber,
+                    row.DepartureAirport,
+                    row.ArrivalAirport,
+                    row.Destination,
+                    row.DepartureDate,
+                    row.ArrivalDate,
+                    row.FlightClass,
+                    row.AvailableSeats,
+                    row.Price
+                  )
+                "
+                class="btn btn-outline-primary icon-btn"
+                data-toggle="modal"
+                data-target="#updateModal"
+              >
+                <i class="fa fa-pencil"></i>
+                <!-- Font Awesome edit icon -->
+              </button>
+              </td>
+              <td>
+              <!-- Delete button with icon -->
+              <button
+                type="button"
+                (click)="deleteFlightData(row._id)"
+                class="btn btn-outline-danger icon-btn"
+              >
+                <i class="fa fa-trash"></i>
+                <!-- Font Awesome trash icon -->
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="updateModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Edit Flight</h4>
+      </div>
+      <form (ngSubmit)="updateFlightDetails()" #flightForm="ngForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="focus-label">Airline</label>
+            <input
+              [(ngModel)]="Airline"
+              name="Airline"
+              type="text"
+              class="form-control"
+              id="InputAirline"
+              placeholder="Enter Airline"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">FlightNumber</label>
+            <input
+              [(ngModel)]="FlightNumber"
+              name="FlightNumber"
+              type="text"
+              class="form-control"
+              id="InputFlightNumber"
+              placeholder="Enter FlightNumber"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">DepartureAirport</label>
+            <input
+              [(ngModel)]="DepartureAirport"
+              name="DepartureAirport"
+              type="text"
+              class="form-control"
+              id="InputDepartureAirport"
+              placeholder="Enter DepartureAirport"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">ArrivalAirport</label>
+            <input
+              [(ngModel)]="ArrivalAirport"
+              name="ArrivalAirport"
+              type="text"
+              class="form-control"
+              id="InputArrivalAirport"
+              placeholder="Enter ArrivalAirport"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Destination</label>
+            <input
+              [(ngModel)]="Destination"
+              name="Destination"
+              type="text"
+              class="form-control"
+              id="InputDestination"
+              placeholder="Enter Destination"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">DepartureDate</label>
+            <input
+              [(ngModel)]="DepartureDate"
+              name="DepartureDate"
+              type="date"
+              class="form-control"
+              id="InputDepartureDate"
+              placeholder="Enter DepartureDate"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">ArrivalDate</label>
+            <input
+              [(ngModel)]="ArrivalDate"
+              name="ArrivalDate"
+              type="date"
+              class="form-control"
+              id="InputArrivalDate"
+              placeholder="Enter ArrivalDate"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">AvailableSeats</label>
+            <input
+              [(ngModel)]="AvailableSeats"
+              name="AvailableSeats"
+              type="text"
+              class="form-control"
+              id="InputAvailableSeats"
+              placeholder="Enter AvailableSeats"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">Price</label>
+            <input
+              [(ngModel)]="Price"
+              name="Price"
+              type="text"
+              class="form-control"
+              id="InputPrice"
+              placeholder="Enter Price"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="focus-label">FlightClass</label>
+            <select
+              [(ngModel)]="FlightClass"
+              name="FlightClass"
+              class="form-select"
+              required
+            >
+              <option *ngFor="let cls of flightclass" [value]="cls">
+                {{ cls }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

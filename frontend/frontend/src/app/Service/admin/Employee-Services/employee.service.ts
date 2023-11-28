@@ -12,7 +12,7 @@ export class EmployeeService {
   
   // API TO get Users of Airline role.
   getEmployee(): Observable<any> {
-    return this.http.get(`http://localhost:3008/api/users/getEmployee`)
+    return this.http.get(`http://localhost:3008/api/getEmployee`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return throwError(error); // Handle errors or modify as needed
@@ -38,11 +38,12 @@ export class EmployeeService {
           );
       }
       adduser(credentials: any): Observable<any> {
-        return this.http.post(`http://localhost:3008/api/users/signup`,credentials)
+        return this.http.post(`http://localhost:3008/api/signup`,credentials)
           .pipe(
             catchError((error: HttpErrorResponse) => {
               return throwError(error); // Handle errors or modify as needed
             })
           );
       }
+      
 }

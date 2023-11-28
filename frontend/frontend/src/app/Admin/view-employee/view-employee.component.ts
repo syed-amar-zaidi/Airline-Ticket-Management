@@ -23,7 +23,7 @@ export class ViewEmployeeComponent implements OnInit {
   public Password = ""
   
   
-  setEmployeeData(Id:any,Name: any,Password:any,Gender:any,Email:any,Contact:any) {
+  setEmployeeData(Id:any,Name: any, Password:any,Gender:any,Email:any,Contact:any) {
     this.Id = Id;
     this.Name = Name;
     this.Gender = Gender;

@@ -33,7 +33,8 @@ export class SignInComponent implements OnInit{
           }
           else if(response.Role == "Passenger")
           {
-            alert("Passenger Login")
+            //alert("Passenger Login")
+            this.router.navigate(['/passenger-sidebar'])
           }
           else if (response.Role == "Airline")
           {
