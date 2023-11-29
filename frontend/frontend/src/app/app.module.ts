@@ -15,7 +15,6 @@ import { AdminSidebarComponent } from './Admin/admin-sidebar/admin-sidebar.compo
 import { AdminSidebarPanelComponent } from './Admin/admin-sidebar-panel/admin-sidebar-panel.component';
 import { AddEmployeeComponent } from './Admin/add-employee/add-employee.component';
 import { ViewEmployeeComponent } from './Admin/view-employee/view-employee.component';
-import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AirlineSidebarComponent } from './Airline/airline-sidebar/airline-sidebar.component';
 import { AirlineSidebarPanelComponent } from './Airline/airline-sidebar-panel/airline-sidebar-panel.component';
 import { AddFlightComponent } from './Airline/add-flight/add-flight.component';
@@ -39,7 +38,6 @@ import { UserProfileComponent } from './Airline/user-profile/user-profile.compon
     AdminSidebarPanelComponent,
     AddEmployeeComponent,
     ViewEmployeeComponent,
-    AdminDashboardComponent,
     AirlineSidebarComponent,
     AirlineSidebarPanelComponent,
     AddFlightComponent,

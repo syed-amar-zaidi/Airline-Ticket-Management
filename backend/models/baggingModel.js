@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 // Schema
 const baggingSchema = new mongoose.Schema({
-    BaggageId: String,
     PassengerName: String,
     FlightNumber: String,
     Weight: Number,

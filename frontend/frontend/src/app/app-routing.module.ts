@@ -8,7 +8,6 @@ import { ContactUsComponent } from './Shared/contact-us/contact-us.component';
 import { AdminSidebarPanelComponent } from './Admin/admin-sidebar-panel/admin-sidebar-panel.component';
 import { AddEmployeeComponent } from './Admin/add-employee/add-employee.component';
 import { ViewEmployeeComponent } from './Admin/view-employee/view-employee.component';
-import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AirlineSidebarPanelComponent } from './Airline/airline-sidebar-panel/airline-sidebar-panel.component';
 import { AddFlightComponent } from './Airline/add-flight/add-flight.component';
 import { ViewFlightComponent } from './Airline/view-flight/view-flight.component';
@@ -24,7 +23,6 @@ const routes: Routes = [
   {path:'admin-sidebar',component:AdminSidebarPanelComponent,
   children:
   [
-    {path:'admin-dashboard',component:AdminDashboardComponent},
     {path:'add-employee',component:AddEmployeeComponent},
     {path:'view-employee',component:ViewEmployeeComponent},
   ]},

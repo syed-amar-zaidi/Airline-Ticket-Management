@@ -7,6 +7,7 @@ const flightControllers = require("../controllers/flightController");
 const bookingControllers = require("../controllers/bookingController");
 const users = require("../controllers/userControllers")
 const baggingControllers = require("../controllers/baggingController");
+const ticketPrintingController = require('../controllers/ticketPrintingController');
 
 // Create new users
 router.post("/signup", signup.createUser);
@@ -56,5 +57,7 @@ router.put("/booking/:id", bookingControllers.updateBooking);
 router.delete("/booking/:id", bookingControllers.deleteBooking);
 // Confirm booking and generate email confirmations with e-tickets
 router.post("/booking/:id/confirm", bookingControllers.confirmBooking);
+// Route for generating a printable ticket
+router.post('/tickets/printable', ticketPrintingController.generatePrintableTicket);
 
 module.exports = router;
